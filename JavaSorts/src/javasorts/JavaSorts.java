@@ -26,6 +26,7 @@ public class JavaSorts {
         Scanner scanner= new Scanner(System.in);
         Random rand = new Random();
         int tamanho, op;
+        long tempoInicial, tempoFinal;
          System.out.println("Tamanho do vetor: ");
            tamanho = scanner.nextInt();
         int[] vetor = new int[tamanho];
@@ -44,9 +45,19 @@ public class JavaSorts {
          printArray(vetor);
          
      //ordenar o vetor
-               //BubbleSort.bSortComentado(vetor);
-               //SelectionSort.sSortComentado(vetor);
-              InsertionSort.iSortComentado(vetor);
+     //BubbleSort
+     tempoInicial = System.currentTimeMillis();
+          BubbleSort.bSort(vetor);
+     tempoFinal =   System.currentTimeMillis();
+        System.out.println("\n Comparacoes: "+BubbleSort.compara);
+        System.out.println(" Trocas: "+BubbleSort.trocas);
+        System.out.println(" Tempo: "+(tempoFinal-tempoInicial));
+              
+     //SelectionSort
+              //SelectionSort.sSortComentado(vetor);
+              
+     //InsertionSort
+              //InsertionSort.iSortComentado(vetor);
          
          //mostrar ordenado
          System.out.println("\nVetor ordenado: ");

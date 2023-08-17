@@ -12,17 +12,21 @@ import java.util.Scanner;
  * @author 15385404608
  */
 public class SelectionSort {
+    public static long  compara=0, trocas=0;
     private static int indexMinArray(int array[], int posAtual){
         int k = posAtual;
-        for(int i= posAtual+1 ;i<array.length; i++)
+        for(int i= posAtual+1 ;i<array.length; i++){
+            compara++; // contando comparacoes
             if(array[i]<array[k]) //k = indice do menor
                 k = i;
+        }// fim for
         return k; //indice do menor valor
     }
 //------------------------------------------
 public static void sSort(int array[]){
       for(int i=0; i<array.length-1; i++) {
       int k = indexMinArray(array, i);
+      trocas++; //contando trocas
       int temp = array[i];
       array[i] = array[k];
       array[k] = temp;

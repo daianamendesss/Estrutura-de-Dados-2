@@ -12,10 +12,14 @@ import java.util.Scanner;
  * @author daiana
  */
 public class BubbleSort {
+    public static long  compara=0, trocas=0;
+    
     public static void bSort(int array[]){
         for (int fase=1; fase<array.length; fase++){
             for (int comp=0; comp<array.length - fase; comp++){
+                compara++; // contando compracaoes
                 if(array[comp]>array[comp+1]){
+                    trocas++; //contando trocas
                     //trocando de posicao os valores:
                     int temp = array[comp];
                     array[comp] = array[comp+1];

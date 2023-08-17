@@ -12,12 +12,16 @@ import java.util.Scanner;
  * @author 15385404608
  */
 public class InsertionSort {
+   public static long  compara=0, deslocamento=0;
+   
    private static void insert(int array[], int i){
             int eleito = array[i];
             int comp = i-1;
             while(comp>=0 && eleito<array[comp]){
             // deslocar
-            array[comp+1] = array[comp];
+            compara++;
+            array[comp+1] = array[comp]; //deslocando aqui
+            deslocamento++;
             comp--;
             }// fim while
             //inserindo o eleito na posicao correta
